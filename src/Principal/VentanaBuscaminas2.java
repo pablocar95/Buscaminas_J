@@ -35,6 +35,7 @@ public class VentanaBuscaminas2 extends javax.swing.JFrame {
 
     //cuentaminas realiza un paso previo que consiste en contar para cada celda
     //el numero de minas que hay alrededor
+    
     private void cuentaMinas() {
         int minas = 0;
 
@@ -59,10 +60,10 @@ public class VentanaBuscaminas2 extends javax.swing.JFrame {
         }
 
     }
-
     /**
      * Creates new form VentanaBuscaminas2
      */
+    
     public VentanaBuscaminas2() {
         initComponents();
         setSize(1280, 1024);
@@ -76,6 +77,7 @@ public class VentanaBuscaminas2 extends javax.swing.JFrame {
                 boton.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mousePressed(MouseEvent evt) {
+                        
                         //metodo a llamar cuando se pulse el botón
 
                         botonPulsado(evt);
@@ -103,8 +105,8 @@ public class VentanaBuscaminas2 extends javax.swing.JFrame {
                 }
             }
     }
-
     //este método es llamado cada vez que hacemos clic en un botón
+    
     private void botonPulsado(MouseEvent e) {
         if (!gameOver) {
             Boton miBoton = (Boton) e.getComponent();
@@ -112,9 +114,10 @@ public class VentanaBuscaminas2 extends javax.swing.JFrame {
                 //miBoton.setText("?");
                 miBoton.setIcon(iconFlag);
             } else {
-            //si es una bomba --> explota y se acaba la partid
+            //si es una bomba --> explota y se acaba la partida y saldria el game over
+                
                 //declaro un arraylist para ir guardando la lista de botones
-                //que tengo que verificai
+                //que tengo que verificar 
                 if (miBoton.bomba == 1) {
                     System.out.println("Fin de la partida");
                     miBoton.setFocusPainted(false);
