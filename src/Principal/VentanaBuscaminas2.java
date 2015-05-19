@@ -61,7 +61,7 @@ public class VentanaBuscaminas2 extends javax.swing.JFrame {
     }
 
     /**
-     * Creates new form VentanaBuscaminas
+     * Creates new form VentanaBuscaminas2
      */
     public VentanaBuscaminas2() {
         initComponents();
@@ -94,21 +94,14 @@ public class VentanaBuscaminas2 extends javax.swing.JFrame {
         cuentaMinas();
     }
 
+    // inicio el game over
     private void finDePartida() {
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
                 Boton boton = arrayBotones[i] [j];
-                if (boton.bomba == 1) {
-                    boton.setIcon(iconMina);
-                    boton.setEnabled(false);
-                } else {
-                    if(boton.numeroMinasAlrededor>0)
-                    boton.setText(boton.numeroMinasAlrededor + "");
-                    boton.setEnabled(false);
+               
                 }
             }
-        }
-
     }
 
     //este método es llamado cada vez que hacemos clic en un botón
@@ -123,12 +116,12 @@ public class VentanaBuscaminas2 extends javax.swing.JFrame {
                 //declaro un arraylist para ir guardando la lista de botones
                 //que tengo que verificai
                 if (miBoton.bomba == 1) {
-                    System.out.println("SE ACABO");
+                    System.out.println("Fin de la partida");
                     miBoton.setFocusPainted(false);
                     finDePartida();
                     gameOver=true;
                 } else {
-                    System.out.println("TE SALVASTE");
+                    System.out.println("WELL PLAYED");
                     if (miBoton.numeroMinasAlrededor>0)
                     miBoton.setText(miBoton.numeroMinasAlrededor+"");
                     ArrayList<Boton> listaDeCasillasAMirar = new ArrayList();
